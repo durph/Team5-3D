@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import VideoDetails from './components/VideoDetails/VideoDetails';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           Local Express Server ping
         </a>
       </header>
+      <VideoDetails />
     </div>
   );
 }
