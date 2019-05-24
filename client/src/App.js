@@ -24,7 +24,6 @@ function App() {
           Local Express Server ping
         </a>
       </header>
-      <VideoDetails />
     </div>
   );
 }
