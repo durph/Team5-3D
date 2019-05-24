@@ -1,27 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import talkData from './assets/ted_main_clean.json'
 
-function App() {
+class App extends React.Component {
+  state = {
+    data: talkData
+  }
+
+
+  render() {
+    // console.log(data)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href={`http://localhost:8080/ping`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Local Express Server ping
-        </a>
-      </header>
+      {this.state.data.filter(item => item.tags.includes('climate change')).map((tagItem,i) => <p key={i} className="comment">{tagItem.name}</p> )}
     </div>
   );
+}
 }
 
 export default App;
