@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+
+import VideoDetails from './components/VideoDetails/VideoDetails';
 import Navigation from './components/Navigation/Navigation'
 import Main from './components/Main/Main'
-// import VideoPage from './components/VideoPage/VideoPage'
 
 import talkData from './assets/ted_main_clean.json'
 
@@ -21,7 +22,7 @@ class App extends React.Component {
         <Navigation />
         <Switch>
           <Route path="/" render={props => <Main {...props} data={this.state.data}/>} />
-          {/* <Route path="/:videoId" render={props => <VideoPage {...props} data={this.state.data}/>} /> */}
+          <Route path="/:videoId" render={props => <VideoDetails {...props} data={this.state.data}/>} />
         </Switch>
       </Router>
     </div>
