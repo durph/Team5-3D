@@ -12,6 +12,7 @@ class FilterVideo extends React.Component {
 
 
   render() {
+    console.log(this.state.category1Value)
     return (
       <section className="filter-video">
         <div className="filter-video__filter">
@@ -22,7 +23,7 @@ class FilterVideo extends React.Component {
         </div>
         <div className="filter-video__videos-list">
           <Link className="filter-video__video-item">
-            {this.props.data.comments}
+            {/* {this.props.data.comments} */}
             {/* {this.state.data.filter(item => item.tags.includes('climate change')).map((tagItem,i) => <p key={i} className="comment">{tagItem.name}</p> )} */}
 
           </Link>
