@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-// import Navigation from './components/Navigation/Navigation'
+import Navigation from './components/Navigation/Navigation'
 import Main from './components/Main/Main'
 // import VideoPage from './components/VideoPage/VideoPage'
 
@@ -18,7 +18,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <Router>
-        {/* <Navigation /> */}
+        <Navigation />
         <Switch>
           <Route path="/" render={props => <Main {...props} data={this.state.data}/>} />
           {/* <Route path="/:videoId" render={props => <VideoPage {...props} data={this.state.data}/>} /> */}
