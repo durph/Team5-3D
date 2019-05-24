@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+// import Navigation from './components/Navigation/Navigation'
+import Main from './components/Main/Main'
+// import VideoPage from './components/VideoPage/VideoPage'
+
 import talkData from './assets/ted_main_clean.json'
 
 class App extends React.Component {
   state = {
-    data: talkData
+    data: talkData[0]
   }
 
 
@@ -13,7 +17,13 @@ class App extends React.Component {
     // console.log(data)
   return (
     <div className="App">
-      {this.state.data.filter(item => item.tags.includes('climate change')).map((tagItem,i) => <p key={i} className="comment">{tagItem.name}</p> )}
+      <Router>
+        {/* <Navigation /> */}
+        <Switch>
+          <Route path="/" render={props => <Main {...props} data={this.state.data}/>} />
+          {/* <Route path="/:videoId" render={props => <VideoPage {...props} data={this.state.data}/>} /> */}
+        </Switch>
+      </Router>
     </div>
   );
 }
