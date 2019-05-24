@@ -9,7 +9,7 @@ import talkData from './assets/ted_main_clean.json'
 
 class App extends React.Component {
   state = {
-    data: talkData[0]
+    data: talkData
   }
 
 
